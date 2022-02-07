@@ -1,15 +1,22 @@
 <h1>HomePage</h1>
 
-<h3> Objects </h3>
+<%# public_count is a class method defined in Visible module %>
+<%# Our page has  %>
+<%# <%= Article.public_count %> 
+<%# articles and counting!!! %>
+
+<h3> Articles </h3>
 <ul>
   <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
-<h3> Create a New Object </h3>
+<h3> Create a New Article </h3>
 
 <%= link_to "New Article", new_article_path %>
 
