@@ -11,3 +11,10 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<h2>Comments</h2>
+<%# renders the partial present in _comment.html.erb %>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form'  %>
